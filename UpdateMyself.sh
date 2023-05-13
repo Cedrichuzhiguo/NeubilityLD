@@ -1,2 +1,3 @@
-git pull
+git fetch --all
+git reset --hard origin/main
 chmod +x *
