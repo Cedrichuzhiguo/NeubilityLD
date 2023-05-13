@@ -4,8 +4,9 @@ LDE_TGT="/home/label/Documents/LDE"
 LDE_CURRENT="${LDE_TGT}/LDE_current"
 LDE_CURRENT_ZIP_FILENAME="LDE-v0.9.8.5.1.release.with.debug_OPP.tar.gz"
 
-echo "${LDE_CURRENT}"
+echo "Remove preinstalled version, if exists"
 
+rm -rf "${LDE_TGT}/LDE-v*"
 # Find filename with .license extension from a subfolder
 licenseFile=$(find "${LDE_TGT}" -maxdepth 1 -type f -name "*.license" | head -n 1)
 licenseFile=$(basename "$licenseFile")
@@ -28,6 +29,7 @@ fi
 
 # Copy license file to the LDE_CURRENT folder
 cp "${LISCENSE_FOLDER}/${licenseFile}" "${LDE_CURRENT}/license.license"
+./StartLDEditor.sh
 
 
 
