@@ -29,7 +29,7 @@ fi
 
 # Copy license file to the LDE_CURRENT folder
 cp "${LISCENSE_FOLDER}/${licenseFile}" "${LDE_CURRENT}/license.license"
-./StartLDEditor.sh
+/home/label/Documents/Data/Newbility/NeubilityShell/StartLDEditor.sh
 
 
 
