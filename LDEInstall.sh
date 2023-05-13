@@ -13,7 +13,7 @@ echo "now copy license file ${licenseFile} to ${LISCENSE_FOLDER}"
 cp "${LDE_TGT}/${licenseFile}" "${LISCENSE_FOLDER}/"
 
 # Remove all the folders under LDE_TGT 
-rm -rf "${LDE_TGT}"/*
+rm -rf "${LDE_CURRENT}"
 
 # Unzip current zip file to LDE target folder
 tar -xzf "${LDE_SRC}/${LDE_CURRENT_ZIP_FILENAME}" -C "${LDE_TGT}"
@@ -25,8 +25,6 @@ if [ -n "$dirname" ]; then
   mv "${dirname}/" "${LDE_CURRENT}"
 fi
 
-#extract the filename from the full path
-licenseFileName = $
 
 # Copy license file to the LDE_CURRENT folder
 cp "${LISCENSE_FOLDER}/${licenseFile}" "${LDE_CURRENT}/license.license"
