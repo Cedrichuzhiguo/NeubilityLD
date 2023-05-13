@@ -1,6 +1,6 @@
 LISCENSE_FOLDER="/home/label/Documents/Data/Newbility/LDEditor/license"
 LDE_SRC="/home/label/Documents/Data/Newbility/LDEditor/"
-LDE_TGT="~/Documents/LDE"
+LDE_TGT="/home/label/Documents/LDE"
 LDE_CURRENT="${LDE_TGT}/LDE_current"
 LDE_CURRENT_ZIP_FILENAME="LDE-v0.9.8.5.1.release.with.debug_OPP.tar.gz"
 
@@ -27,6 +27,7 @@ fi
 
 # Copy license file to the LDE_CURRENT folder
 cp "${licenseFile}" "${LDE_CURRENT}/license.license"
+
 
 
 
