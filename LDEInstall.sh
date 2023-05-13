@@ -5,10 +5,10 @@ LDE_CURRENT="${LDE_TGT}/LDE_current"
 LDE_CURRENT_ZIP_FILENAME="LDE-v0.9.8.5.1.release.with.debug_OPP.tar.gz"
 
 # Find filename with .license extension from a subfolder
-licenseFile=$(${LDE_TGT} -maxdepth 1 -type f -name "*.license" | head -n 1)
+licenseFile=$(find "${LDE_TGT}" -maxdepth 1 -type f -name "*.license" | head -n 1)
 cp "${licenseFile}" "${LISCENSE_FOLDER}"
 
-# Remove all the folder under LDE_TGT 
+# Remove all the folders under LDE_TGT 
 rm -rf "${LDE_TGT}"/*
 
 # Unzip current zip file to LDE target folder
@@ -20,11 +20,14 @@ if [ -n "$dirname" ]; then
   mv "$dirname" "${LDE_CURRENT}"
 fi
 
-# Copy license file to the LDE_CURRENT folder
+# Create the LDE_CURRENT folder if it doesn't exist
 if [ ! -d "${LDE_CURRENT}" ]; then
   mkdir "${LDE_CURRENT}"
 fi
+
+# Copy license file to the LDE_CURRENT folder
 cp "${licenseFile}" "${LDE_CURRENT}/license.license"
+
 
 
 
